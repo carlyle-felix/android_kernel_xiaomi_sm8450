@@ -1,0 +1,10 @@
+KERNEL_DIR=sm8450
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.cupid.common.clang
+
+ARCH=arm64
+
+LLVM_IAS=1
+CROSS_COMPILE=aarch64-linux-gnu-
+LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=prebuilts/gas/linux-x86
+
+KERNEL_BINARY=Image

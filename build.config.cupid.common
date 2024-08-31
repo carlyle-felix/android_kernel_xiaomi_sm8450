@@ -1,0 +1,5 @@
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+
+
+DEFCONFIG=vendor/xcupid-gki_defconfig
+BUILD_INITRAMFS=1
