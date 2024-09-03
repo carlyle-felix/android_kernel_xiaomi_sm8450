@@ -1,0 +1,30 @@
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.cupid.common.clang
+
+ARCH=arm64
+
+SKIP_MRPROPER=1
+LLVM_IAS=1
+CROSS_COMPILE=aarch64-linux-gnu-
+CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
+LINUX_GCC_CROSS_COMPILE_PREBUILTS_BIN=prebuilts/gas/linux-x86
+
+DEFCONFIG=ksu-cupid_defconfig
+
+KERNEL_BINARY=Image
+
+MAKE_GOALS="${MAKE_GOALS}
+Image.gz
+modules
+"
+
+FILES="
+arch/arm64/boot/Image
+vmlinux
+System.map
+vmlinux.symvers
+modules.builtin
+modules.builtin.modinfo
+"
+KMI_SYMBOL_LIST=android/abi_gki_aarch64_xiaomi
+GKI_MODULES_LIST=android/gki_aarch64_modules
